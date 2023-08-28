@@ -1,0 +1,35 @@
+def DistanceCalculator(shuru,shsh, distance):
+  for j in range(12): 
+   if Adj[j][0] == shuru:
+    for k in range(12):
+     if(Adj[k][0] == shuru and Adj[k][1] == shsh):
+      distance= distance+Adj[k][2]
+      return distance
+    distance= distance+Adj[j][2]
+    shuru=Adj[j][1]
+    DistanceCalculator(shuru,shsh, distance)
+  return distance
+
+
+Adj=[('i','a',30),
+('x','y',3),
+('y','z',2),
+('z','az',30),
+ ('i','b',56),
+ ('a','c',17),
+ ('a','d',33),
+ ('b','d',25),
+ ('b','e',45),
+ ('b','f',16),
+ ('c','d',53),
+ ('c','g',38),
+ ('d','g',27),
+ ('e','g',16),
+ ('g','h',48)]
+t=int(input('Iterations number:'))
+for i in range(t):
+ print('Iteration:',i+1)
+ shuru=str(input("Start : "))
+ shsh=str(input("End : "))
+ distance=0
+ print("distance: ", DistanceCalculator(shuru,shsh, distance))
