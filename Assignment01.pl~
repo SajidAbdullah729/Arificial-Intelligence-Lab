@@ -64,7 +64,6 @@ findSister.
 
 findAunt:-write('name:'),read(Y),aunt(X,Y),write(X),tab(5),fail.
 findAunt.
-
 findUncle:-write('name:'),read(Y),uncle(X,Y),write(X),tab(5),fail.
 findUncle.
 
